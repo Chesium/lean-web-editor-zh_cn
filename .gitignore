@@ -1,7 +1,3 @@
 node_modules
-lib
-.*.sw?
-*-debug.log
-*.tgz
 /dist
 /.vscode

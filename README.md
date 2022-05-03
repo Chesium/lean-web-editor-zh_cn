@@ -1,4 +1,7 @@
-# lean-web-editor
+# lean-在线编辑器
+
+中文版 —— 由 Chesium 翻译
+Chinese version. Translated by Chesium.
 
 This repository contains the code for the leanprover-community fork of the [Lean live editor](https://leanprover-community.github.io/lean-web-editor).
 

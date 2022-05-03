@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin-legacy');
 const MonacoEditorSrc = path.join(__dirname, 'node_modules', 'react-monaco-editor');
 const VSMonacoEditorSrc = path.join(__dirname, 'node_modules', 'monaco-editor', 'min', 'vs');
 
-let distDir = path.resolve(__dirname, 'dist');
+let distDir = path.resolve(__dirname, 'docs');
 
 module.exports = {
   entry: {
@@ -33,15 +33,7 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        loader: [
-          // To use babel in lean-client-js-browser, add the following to this package.json
-          // "babel-core": "^6.26.3",
-          // "babel-loader": "^7.1.2",
-          // "babel-polyfill": "^6.26.0",
-          // "babel-preset-env": "^1.7.0",
-          // 'babel-loader?presets[]=env',
-          "ts-loader",
-        ],
+        loader: ["ts-loader"],
       },
     ],
   },
@@ -64,6 +56,12 @@ module.exports = {
       { from: "public/chesium_studio.png", to: "chesium_studio.png" },
       { from: "public/display-goal-light.svg", to: "display-goal-light.svg" },
       { from: "public/display-list-light.svg", to: "display-list-light.svg" },
+      { from: "lib/lean_js_js.js", to: "lean_js_js.js" },
+      { from: "lib/lean_js_wasm.js", to: "lean_js_wasm.js" },
+      { from: "lib/lean_js_wasm.wasm", to: "lean_js_wasm.wasm" },
+      { from: "lib/library.info.json", to: "library.info.json" },
+      { from: "lib/library.olean_map.json", to: "library.olean_map.json" },
+      { from: "lib/library.zip", to: "library.zip" },
     ]),
     new TerserPlugin(),
   ],
